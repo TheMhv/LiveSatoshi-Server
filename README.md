@@ -1,5 +1,5 @@
 # Livesatoshi Widget
-The Widget client for [LiveSatoshi](https://github.com/TheMhv/LiveSatoshi)
+The widget client for [LiveSatoshi](https://github.com/TheMhv/LiveSatoshi)
 
 ## Instalation
 
@@ -30,19 +30,19 @@ Copy the example .env
 $ cp .env.example .env
 ```
 
-Set the `ALBY_TOKEN` with your getalby account access token.
+Set the `API_URL` with your server `url`.
+Set the `*_ENDPOINT` variables with your server `ENDPOINT` secret configuration.
 
 Change the another values according to your preference.
 
 ## Usage
 
-> You will need to configure the server address in the webhook of your getalby account to receive payment events.
-> REMEMBER TO ADD THE `/receive` ROUTE
+>#### You will need a active and configured [LiveSatoshi Server](https://github.com/TheMhv/LiveSatoshi) to run the widget.
 
 * Download some RVC models
     - You can find some at https://applio.org/models
 * Extract and put your models into `MODELS_DIR`
-* Run the server:
+* Run the client:
 
 ```bash
 $ python main.py
@@ -51,12 +51,6 @@ $ python main.py
 * And set the url with `/widget` route for your streaming software
 
 ## Tips
-
-### Documentation
-
-FastAPI provides route documentation automatically.
-
-You can check the `/docs` route for [Swagger UI](https://github.com/swagger-api/swagger-ui) format or the `/redoc` route for [ReDoc](https://github.com/Redocly/redoc) format.
 
 ### Model configuration
 
