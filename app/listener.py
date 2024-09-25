@@ -29,12 +29,8 @@ async def start_sse_listener(app):
                                         }))
                                 except json.JSONDecodeError:
                                     print(f"Failed to parse JSON: {data}")
-        except aiohttp.ClientError as e:
-            print(f"Connection error: {e}")
-        except asyncio.CancelledError:
-            break
         except Exception as e:
-            print(f"Unexpected error: {e}")
+            break
         
         # Wait before attempting to reconnect
         await asyncio.sleep(5)
