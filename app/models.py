@@ -1,14 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel
 
-class WebhookRequest(BaseModel):
-    payment_hash: str
-
-class InvoiceMetadata(BaseModel):
-    text: str
-    name: str = None
-    model: str = None
-
 class TTSParams(BaseModel):
     voice: str = "pt-BR-ThalitaNeural"
     rate: str = "+0%"
