@@ -1,5 +1,6 @@
 import os
 import json
+import requests
 from glob import glob
 from app.models import Model, ModelParams
 from app.config import load_config
@@ -51,3 +52,13 @@ def list_models():
                     "image": model.image
                 })
     return models
+
+def set_models():
+    try:
+        url = f"{config.API_URL}/set_models/{config.MODELS_ENDPOINT}"
+        response = requests.request("POST", url, json=list_models())
+        if (response.status_code != 200):
+            raise Exception("Models can not be set")
+        print("Models is set")
+    except:
+        print("Models can not be set")

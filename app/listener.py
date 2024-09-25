@@ -2,12 +2,15 @@ import aiohttp
 import asyncio
 import json
 from app.audiogen import audiogen
+from app.config import load_config
+
+config = load_config()
 
 async def start_sse_listener(app):
     while True:
         try:
             async with aiohttp.ClientSession() as session:
-                async with session.get("http://localhost:3000/api/events") as response:
+                async with session.get(f"{config.API_URL}/events/{config.EVENT_ENDPOINT}") as response:
                     async for line in response.content:
                         if line:
                             decoded_line = line.decode('utf-8').strip()
@@ -29,6 +32,9 @@ async def start_sse_listener(app):
                                         }))
                                 except json.JSONDecodeError:
                                     print(f"Failed to parse JSON: {data}")
+        except aiohttp.ClientError as e:
+            print(f"Connection error: {e}")
+            break
         except Exception as e:
             break
         
