@@ -1,5 +1,5 @@
-# Livesatoshi API Server
-The API server for [LiveSatoshi](https://github.com/TheMhv/LiveSatoshi)
+# Livesatoshi Widget
+The Widget client for [LiveSatoshi](https://github.com/TheMhv/LiveSatoshi)
 
 ## Instalation
 
