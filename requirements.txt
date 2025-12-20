@@ -4,6 +4,8 @@ pydantic==2.9.2
 pydantic_settings==2.5.2
 python-dotenv==1.0.1
 Requests==2.32.3
-rvc_python==0.1.4
+rvc_python==0.1.5
 starlette==0.38.6
 uvicorn==0.30.6
+nostr-sdk==0.35.1
+tensorboardX==2.6.4
